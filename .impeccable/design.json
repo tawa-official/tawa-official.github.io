@@ -1,0 +1,24 @@
+{
+  "northStar": "A jubako seen from above: black lacquer outside, the food glowing inside; the interface recedes to hairlines.",
+  "tonalRamps": {
+    "lacquer": ["#121010", "#1a1716", "#24201e"],
+    "text": ["#ece5d8", "#b4aa9a", "#8d8476"],
+    "washi": ["#f1efeb", "#e7e4de"],
+    "ink": ["#1b1816", "#57504a", "#6f675e"],
+    "shu": ["#b03a26"]
+  },
+  "elevation": { "none": "none", "rule-dark": "1px solid rgba(236,229,216,.14)", "rule-light": "1px solid rgba(27,24,22,.14)" },
+  "motion": {
+    "ease": "cubic-bezier(.16, 1, .3, 1)",
+    "heroSettle": "scale 1.06 -> 1, 2.4s",
+    "heroRise": "translateY 18px -> 0 + fade, 1.2s, stagger .12s",
+    "reducedMotion": "all animations off"
+  },
+  "breakpoints": { "tablet": "760px", "desktop": "900px", "wide": "1000px" },
+  "components": {
+    "button-primary": "<a class=\"btn btn-solid\">네이버로 예약하기</a>",
+    "button-ghost": "<a class=\"btn btn-ghost\">02-318-5747</a>",
+    "dish-row": "<li class=\"dish\"><img alt=\"\"><h4>히츠마부시<span class=\"rec\">추천</span></h4><span class=\"price num\">30,000</span><span class=\"jp\">ひつまぶし</span><p>설명</p></li>"
+  },
+  "rules": ["One drop of shu", "No gold", "Light headlines, quiet labels", "Square corners", "No shadows"]
+}

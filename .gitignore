@@ -1,0 +1,11 @@
+# 작업용 파일 (사이트에는 필요 없음)
+.claude/
+skills-lock.json
+.impeccable/review/
+.impeccable/questions/
+.impeccable/build/
+.playwright-mcp/
+.DS_Store
+
+# 원본 사진·영상 (사장님 보관용, 공개 저장소에는 올리지 않음)
+assets/source/
