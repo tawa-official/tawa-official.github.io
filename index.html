@@ -8,14 +8,18 @@
 <title>타와 田和 · 시청역 숯불 장어덮밥 · 나고야식 히츠마부시</title>
 <meta name="description" content="시청역 10번 출구 앞, 주문이 들어오면 숯불에 직접 굽는 장어덮밥과 나고야식 히츠마부시 전문점 타와입니다. 메뉴, 영업시간, 주차, 오시는 길을 안내합니다.">
 <meta name="theme-color" content="#121010">
-<meta property="og:type" content="restaurant">
+<meta property="og:type" content="website">
 <meta property="og:title" content="타와 田和 · 시청역 숯불 장어덮밥">
 <meta property="og:description" content="주문이 들어오면 숯불에 직접 굽는 장어덮밥과 나고야식 히츠마부시. 서울 중구 서소문로 115 한산빌딩 지하 1층.">
 <meta property="og:image" content="https://tawa-official.github.io/assets/img/og.jpg">
 <meta property="og:url" content="https://tawa-official.github.io/">
 <meta property="og:site_name" content="타와 田和">
 <link rel="canonical" href="https://tawa-official.github.io/">
+<link rel="alternate" hreflang="ko" href="https://tawa-official.github.io/">
+<link rel="alternate" hreflang="en" href="https://tawa-official.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://tawa-official.github.io/">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="assets/img/spread-2-1100.webp" media="(max-width: 759px)">
 <link rel="preload" as="image" href="assets/img/spread-3-1500.webp" media="(min-width: 760px)">
@@ -24,8 +28,31 @@
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": "https://tawa-official.github.io/#restaurant",
   "name": "타와 田和 (TAWA)",
-  "servesCuisine": ["장어덮밥", "히츠마부시", "일식"],
+  "alternateName": [
+    "타와",
+    "TAWA",
+    "田和",
+    "Tawa"
+  ],
+  "description": "시청역 10번 출구 앞, 주문이 들어오면 일본 장인이 만든 숯화로에서 직접 굽는 장어덮밥과 나고야식 히츠마부시 전문점. 사시미, 참치, 우니와 사케, 와인을 함께 즐길 수 있고 프라이빗 룸이 있습니다.",
+  "url": "https://tawa-official.github.io/",
+  "image": [
+    "https://tawa-official.github.io/assets/img/og.jpg",
+    "https://tawa-official.github.io/assets/img/grill-2-1600.webp",
+    "https://tawa-official.github.io/assets/img/interior-3-1600.webp"
+  ],
+  "servesCuisine": [
+    "장어덮밥",
+    "히츠마부시",
+    "장어구이",
+    "일식",
+    "사시미",
+    "카이센동"
+  ],
+  "priceRange": "₩8,000–₩69,000",
+  "currenciesAccepted": "KRW",
   "telephone": "+82-2-318-5747",
   "address": {
     "@type": "PostalAddress",
@@ -35,12 +62,339 @@
     "addressCountry": "KR"
   },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "15:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "16:00", "closes": "21:00" }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "15:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "16:00",
+      "closes": "21:00"
+    }
   ],
-  "acceptsReservations": "https://naver.me/GxrowFG4",
-  "sameAs": ["https://www.instagram.com/tawa__official"]
+  "acceptsReservations": true,
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": "https://naver.me/GxrowFG4"
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "프라이빗 룸",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "주차 (1시간 무료)",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "콜키지 가능",
+      "value": true
+    }
+  ],
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "메뉴",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "타와의 장어",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "히츠마부시",
+            "description": "숯불로 구운 나고야식 장어덮밥을 김, 와사비, 오차즈케와 함께 즐기는 타와의 시그니처 메뉴",
+            "offers": {
+              "@type": "Offer",
+              "price": "30000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "히츠마부시 (특)",
+            "description": "장어 한 마리 반을 숯불에 구워 담아낸 특선 메뉴",
+            "offers": {
+              "@type": "Offer",
+              "price": "42000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "우나기 카바야키",
+            "description": "특제 양념을 발라 숯불에 구워낸 정통 장어 양념구이",
+            "offers": {
+              "@type": "Offer",
+              "price": "28000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "우나기 시라야키",
+            "description": "장어 본연의 고소함과 담백함을 느끼는 장어 소금구이",
+            "offers": {
+              "@type": "Offer",
+              "price": "28000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "덮밥",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "타와 특선동",
+            "description": "참치, 단새우, 연어알, 안키모",
+            "offers": {
+              "@type": "Offer",
+              "price": "35000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "카이센동",
+            "description": "광어, 연어, 참치, 한치, 안키모",
+            "offers": {
+              "@type": "Offer",
+              "price": "25000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "삼색동",
+            "description": "광어, 연어, 참치",
+            "offers": {
+              "@type": "Offer",
+              "price": "25000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "참치",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "특선 참치 모둠 (중)",
+            "description": "오도로, 주도로, 아카미 등 다양한 참치 부위",
+            "offers": {
+              "@type": "Offer",
+              "price": "69000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "참치 모둠 (소)",
+            "description": "엄선한 참치 부위 모둠",
+            "offers": {
+              "@type": "Offer",
+              "price": "39000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "사시미",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "제철 사시미 (중)",
+            "description": "제철 회에 단새우와 우니를 더한 구성",
+            "offers": {
+              "@type": "Offer",
+              "price": "62000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "제철 사시미 (소)",
+            "description": "제철 회",
+            "offers": {
+              "@type": "Offer",
+              "price": "39000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "연어 숙성 사시미",
+            "description": "숙성 연어 사시미",
+            "offers": {
+              "@type": "Offer",
+              "price": "25000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "우니",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "아마에비와 우니",
+            "description": "성게알과 단새우",
+            "offers": {
+              "@type": "Offer",
+              "price": "49000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "우니 마키",
+            "description": "우니를 올린 마키",
+            "offers": {
+              "@type": "Offer",
+              "price": "30000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "식사",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "일식카레",
+            "description": "정통 일식 카레",
+            "offers": {
+              "@type": "Offer",
+              "price": "15000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "쇼가야키 세트",
+            "description": "생강 소스 돼지고기와 순두부찌개",
+            "offers": {
+              "@type": "Offer",
+              "price": "15000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "우마카라부타 세트",
+            "description": "매콤한 돼지고기와 순두부찌개",
+            "offers": {
+              "@type": "Offer",
+              "price": "15000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "일품요리",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "쇼가야키 (특)",
+            "description": "수제 생강 소스 돼지고기",
+            "offers": {
+              "@type": "Offer",
+              "price": "22000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "우마카라부타 (특)",
+            "description": "매콤한 소스의 돼지고기",
+            "offers": {
+              "@type": "Offer",
+              "price": "22000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "모둠튀김 한판",
+            "description": "모둠 튀김",
+            "offers": {
+              "@type": "Offer",
+              "price": "22000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "치킨가라아게",
+            "description": "일식 닭튀김",
+            "offers": {
+              "@type": "Offer",
+              "price": "20000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "백합 순두부찌개",
+            "description": "백합 조개 육수 순두부찌개",
+            "offers": {
+              "@type": "Offer",
+              "price": "12000",
+              "priceCurrency": "KRW"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "베이비 쇼가야키",
+            "description": "작은 양의 쇼가야키",
+            "offers": {
+              "@type": "Offer",
+              "price": "8000",
+              "priceCurrency": "KRW"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/tawa__official",
+    "https://naver.me/GxrowFG4"
+  ]
 }
+
 </script>
 </head>
 <body>
@@ -58,6 +412,7 @@
     <nav class="nav" aria-label="주요 메뉴">
       <a href="#story">이야기</a><a href="#menu">메뉴</a><a href="#space">공간</a><a href="#visit">오시는 길</a>
     </nav>
+    <a class="head-lang" href="en/" hreflang="en" lang="en" aria-label="English">EN</a>
     <a class="head-book" href="https://naver.me/GxrowFG4" target="_blank" rel="noopener">예약</a>
   </div>
 </header>
@@ -466,6 +821,7 @@
       <a href="tel:02-318-5747">02-318-5747</a>
       <a href="https://www.instagram.com/tawa__official" target="_blank" rel="noopener">Instagram</a>
       <a href="https://naver.me/GxrowFG4" target="_blank" rel="noopener">네이버 예약</a>
+      <a href="en/" hreflang="en" lang="en">English</a>
     </div>
   </div>
 </footer>

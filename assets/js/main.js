@@ -15,15 +15,38 @@
     return { day: day, min: parseInt(map.hour, 10) * 60 + parseInt(map.minute, 10) };
   }
 
+  var EN = (document.documentElement.lang || "").indexOf("en") === 0;
+  var T = EN ? {
+    sunday: ["We're closed on Sundays", "Opens Monday at 10:00"],
+    before: ["Not open yet", "Opens today at 10:00"],
+    lunch: ["Open now", "Break time from 15:00"],
+    brk: ["Break time", "Reopens at 16:00"],
+    dinner: ["Open now", "Last order 20:20"],
+    last: ["Last order has passed", "Closes at 21:00"],
+    closed: "Closed for today", toMon: "Opens Monday at 10:00", toTmr: "Opens tomorrow at 10:00",
+    copy: "Copy address", copied: "Copied", copyFail: "Couldn't copy"
+  } : {
+    sunday: ["오늘은 정기휴무입니다", "월요일 10:00에 문을 엽니다"],
+    before: ["영업 전", "오늘 10:00에 문을 엽니다"],
+    lunch: ["지금 영업 중", "15:00부터 브레이크타임"],
+    brk: ["브레이크타임", "16:00에 다시 엽니다"],
+    dinner: ["지금 영업 중", "라스트오더 20:20"],
+    last: ["주문 마감", "21:00 영업 종료"],
+    closed: "영업 종료", toMon: "월요일 10:00에 문을 엽니다", toTmr: "내일 10:00에 문을 엽니다",
+    copy: "주소 복사", copied: "복사했습니다", copyFail: "복사하지 못했습니다"
+  };
+
+  function st(state, pair) { return { state: state, main: pair[0], sub: pair[1] }; }
+
   function statusText(now) {
     var d = now.day, m = now.min;
-    if (d === 0) return { state: "closed", main: "오늘은 정기휴무입니다", sub: "월요일 10:00에 문을 엽니다" };
-    if (m < OPEN) return { state: "closed", main: "영업 전", sub: "오늘 10:00에 문을 엽니다" };
-    if (m < BREAK_START) return { state: "open", main: "지금 영업 중", sub: "15:00부터 브레이크타임" };
-    if (m < BREAK_END) return { state: "break", main: "브레이크타임", sub: "16:00에 다시 엽니다" };
-    if (m < LAST) return { state: "open", main: "지금 영업 중", sub: "라스트오더 20:20" };
-    if (m < CLOSE) return { state: "last", main: "주문 마감", sub: "21:00 영업 종료" };
-    return { state: "closed", main: "영업 종료", sub: d === 6 ? "월요일 10:00에 문을 엽니다" : "내일 10:00에 문을 엽니다" };
+    if (d === 0) return st("closed", T.sunday);
+    if (m < OPEN) return st("closed", T.before);
+    if (m < BREAK_START) return st("open", T.lunch);
+    if (m < BREAK_END) return st("break", T.brk);
+    if (m < LAST) return st("open", T.dinner);
+    if (m < CLOSE) return st("last", T.last);
+    return { state: "closed", main: T.closed, sub: d === 6 ? T.toMon : T.toTmr };
   }
 
   function paintStatus() {
@@ -86,9 +109,9 @@
     copyBtn.addEventListener("click", function () {
       var label = copyBtn.querySelector("span");
       navigator.clipboard.writeText(copyBtn.dataset.copy).then(function () {
-        label.textContent = "복사했습니다";
-        setTimeout(function () { label.textContent = "주소 복사"; }, 2200);
-      }, function () { label.textContent = "복사하지 못했습니다"; });
+        label.textContent = T.copied;
+        setTimeout(function () { label.textContent = T.copy; }, 2200);
+      }, function () { label.textContent = T.copyFail; });
     });
   }
 })();

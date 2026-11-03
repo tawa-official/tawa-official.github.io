@@ -78,6 +78,8 @@ p { margin: 0; text-wrap: pretty; }
 .nav a:hover { opacity: 1; }
 .head-book { font-size: 14px; letter-spacing: .04em; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(236,229,216,.4); transition: background-color .3s var(--ease), color .3s var(--ease); }
 .head-book:hover { background: var(--text); color: var(--lacquer); }
+.head-lang { font-size: 13px; letter-spacing: .12em; text-decoration: none; opacity: .72; padding: 8px 2px; transition: opacity .25s var(--ease); }
+.head-lang:hover { opacity: 1; }
 @media (min-width: 900px) { .nav { display: flex; } }
 
 /* ───── buttons ───── */
@@ -232,6 +234,7 @@ p { margin: 0; text-wrap: pretty; }
 .visit-photo { margin: 0; }
 .visit-photo img { width: 100%; }
 .addr { margin-top: 26px; font-family: var(--f-serif); font-weight: 300; font-size: clamp(20px, 2vw, 26px); line-height: 1.6; }
+.addr-ko { margin-top: 8px; font-size: 14px; color: var(--text-2); }
 .addr-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .addr-actions .btn { min-height: 46px; padding: 0 20px; font-size: 14px; }
 .visit .status { margin-top: 22px; }
