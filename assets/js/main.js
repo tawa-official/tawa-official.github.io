@@ -115,3 +115,36 @@
     });
   }
 })();
+
+/* Analytics: count booking, phone, map and language clicks */
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+  }
+  function where(el) {
+    if (el.closest(".dock")) return "bottom_bar";
+    if (el.closest("header")) return "header";
+    if (el.closest(".hero")) return "hero";
+    if (el.closest("#visit")) return "visit";
+    if (el.closest("footer")) return "footer";
+    return "other";
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a, button");
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    var p = { link_location: where(a), page_language: document.documentElement.lang || "" };
+    if (href.indexOf("naver.me") !== -1) {
+      track(/pin/.test(a.innerHTML) ? "map_click" : "booking_click", p);
+    } else if (href.indexOf("tel:") === 0) {
+      track("phone_click", p);
+    } else if (a.hasAttribute("data-copy")) {
+      track("copy_address", p);
+    } else if (a.hasAttribute("hreflang")) {
+      p.to_language = a.getAttribute("hreflang");
+      track("language_switch", p);
+    } else if (href.indexOf("instagram.com") !== -1) {
+      track("instagram_click", p);
+    }
+  }, true);
+})();
