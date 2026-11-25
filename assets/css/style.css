@@ -228,6 +228,9 @@ p { margin: 0; text-wrap: pretty; }
 .cork li span:last-child { color: var(--text); white-space: nowrap; }
 .fine { margin-top: 16px; font-size: 13.5px; color: var(--text-3); }
 @media (min-width: 900px) { .drinks { grid-template-columns: 1.1fr 1fr; align-items: center; } }
+.give { margin-top: 0; }
+.give-photo img { aspect-ratio: auto; height: auto; }
+.give-photo .cap { margin-top: 10px; }
 
 /* visit */
 .visit { display: grid; gap: clamp(40px, 6vw, 96px); }
